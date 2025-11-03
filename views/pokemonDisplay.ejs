@@ -38,7 +38,7 @@
       <th scope="row">Types</th>
       <td>
         <% 
-        // Loop through each type
+      
         for (let i = 0; i < pokemon.types.length; i++) { 
           let typeName = pokemon.types[i].type.name; 
         %>
@@ -52,9 +52,10 @@
       <th scope="row">Abilities</th>
       <td>
         <% 
-        // Loop through each ability
         for (let i = 0; i < pokemon.abilities.length; i++) { 
           let abilityName = pokemon.abilities[i].ability.name; 
+
+
         %>
           <span class="badge bg-success me-1"><%= abilityName %></span>
         <% } %>
@@ -66,14 +67,17 @@
       <th scope="row">Base Stats</th>
       <td>
         <% 
-        // Loop through each stat
         for (let i = 0; i < pokemon.stats.length; i++) { 
           let statName = pokemon.stats[i].stat.name;
           let statValue = pokemon.stats[i].base_stat;
+
+
         %>
           <strong><%= statName %>:</strong> <%= statValue %> <br>
         <% } %>
+
       </td>
+      
     </tr>
 
   </tbody>
