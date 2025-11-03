@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="text-center">
+    <h1 class="text-white p-5" style="background-color: #EE1B24; font-size: 5rem">Pokédex</h1>
+
+    <%- include('partials/navbar') %>
+
+
+<div class="homeInput text-center mt-5">
+
+ 
+  <img src="/pokedex.gif" alt="Pokédex" class="mb-3" style="width:150px; height:auto;">
+
+
+<form action="/pokemonInfo" method="GET">
+  <label>Select a Pokémon:
+    <select name="name">
+      <% for (let p of pokemons) { %>
+        <option value="<%= p.name %>"><%= p.name %></option>
+      <% } %>
+    </select>
+  </label>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

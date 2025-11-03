@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Pokémon</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="text-center">
+    <h1 style="background-color: #EE1B24; font-size: 5rem; color:white; text-align:center; padding:2rem 0;">Pokédex</h1>
+
+    <%- include('partials/navbar') %>
+
+    <h1 style="text-align:center; margin-top:20px;">Pokémon Library</h1>
+    <div class="pokemonArchive">
+        <% for (let i = 0; i < pokemons.length; i++) { %>
+            <div class="pokemon-card">
+                <img src="<%= pokemons[i].image %>" alt="<%= pokemons[i].name %>">
+                <p><%= pokemons[i].name %></p>
+            </div>
+        <% } %>
+    </div>
+
+    
+
+    <%- include('partials/footer') %>
+</body>
+</html>
